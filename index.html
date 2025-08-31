@@ -1,0 +1,115 @@
+/* Base box style */
+.box {
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  margin: 20px;
+  background: lightblue;
+  border: 2px solid #333;
+  cursor: pointer;
+  transition: margin-left 0s; /* default to avoid jumps */
+}
+
+/* Example A – property | duration */
+.box.a {
+  transition: margin-right 4s;
+}
+.box.a:hover {
+  margin-right: 200px;
+}
+
+/* Example B – property | duration | delay */
+.box.b {
+  transition: margin-right 4s 1s;
+}
+.box.b:hover {
+  margin-right: 200px;
+}
+
+/* Example C – property | duration | easing */
+.box.c {
+  transition: margin-right 4s ease-in-out;
+}
+.box.c:hover {
+  margin-right: 200px;
+}
+
+/* Example D – property | duration | easing | delay */
+.box.d {
+  transition: margin-right 4s ease-in-out 1s;
+}
+.box.d:hover {
+  margin-right: 200px;
+}
+
+/* Example E – discrete transition */
+.box.e {
+  transition: display 4s allow-discrete;
+}
+.box.e:hover {
+  display: none;
+}
+
+/* Example F – multiple properties */
+.box.f {
+  transition: margin-right 4s, color 1s;
+}
+.box.f:hover {
+  margin-right: 200px;
+  color: red;
+}
+
+/* Example G – transition all */
+.box.g {
+  transition: all 0.5s ease-out allow-discrete;
+}
+.box.g:hover {
+  margin-left: 200px;
+  background: coral;
+  color: white;
+}
+
+/* Example H – shorthand all with delay */
+.box.h {
+  transition: 200ms linear 50ms;
+}
+.box.h:hover {
+  transform: scale(1.5);
+  background: green;
+}
+
+/* Example I – inherit */
+.parent {
+  transition: margin-left 2s; /* parent defines transition */
+}
+.box.i {
+  transition: inherit; /* child inherits */
+}
+.parent:hover .box.i {
+  margin-left: 200px;
+}
+
+/* Example J – initial */
+.box.j {
+  transition: initial;
+}
+.box.j:hover {
+  background: red;
+}
+
+/* Example K – unset */
+.box.k {
+  transition: unset;
+}
+.box.k:hover {
+  transform: rotate(45deg);
+}
+
+/* Example L – revert (visual effect depends on UA or cascade layers) */
+.box.l {
+  transition: revert;
+}
+.box.l:hover {
+  background: pink;
+}
